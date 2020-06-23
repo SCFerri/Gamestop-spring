@@ -13,7 +13,8 @@ import it.spring.repository.GiocoRepository;
 @Service
 @Transactional
 public class GiocoService {
-	@Autowired GiocoRepository repo;
+	@Autowired 
+	private GiocoRepository repo;
 	
 	public void save(Gioco gioco) {
 		repo.save(gioco);
@@ -32,18 +33,18 @@ public class GiocoService {
 	}
 	
 	public List<Gioco> orderByPrezzo(){
-		return (List<Gioco>) repo.orderByPrezzo("prezzo");
+		return (List<Gioco>) repo.findByPrezzoOrderByAsc("prezzo");
 	}
 	
 	public List<Gioco> orderByNome() {
-		return (List<Gioco>) repo.orderByNome("nome");
+		return (List<Gioco>) repo.findByNomeOrderByAsc("nome");
 	}
 	
 	public List<Gioco> orderByClassPegi() {
-		return (List<Gioco>) repo.orderByClassPegi("classPegi");
+		return (List<Gioco>) repo.findByClassPegiOrderByAsc("classPegi");
 	}
 	
 	public List<Gioco> orderByCategoria() {
-		return (List<Gioco>) repo.orderByCategoria("categoria");
+		return (List<Gioco>) repo.findByCategoriaOrderByAsc("categoria");
 	}
 }
