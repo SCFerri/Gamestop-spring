@@ -8,12 +8,12 @@ import it.spring.model.Gioco;
 
 public interface GiocoRepository extends CrudRepository<Gioco, Long> {
 	
-	public List<Gioco> findByNomeOrderByAsc(String nome);
+	public List<Gioco> findByTitoloOrderByTitoloAsc(String titolo);
 	
-	public List<Gioco> findByPrezzoOrderByAsc(String prezzo);
+	public List<Gioco> findByPrezzoOrderByPrezzoAsc(String prezzo);
 	
-	public List<Gioco> findByClassPegiOrderByAsc(String classPegi);
+	public List<Gioco> findByClassPegiOrderByClassPegiAsc(String classPegi);
 	
-	public List<Gioco> findByCategoriaOrderByAsc(String categoria);
+	public List<Gioco> findByCategoriaOrderByCategoriaAsc(String categoria);
 	
 }

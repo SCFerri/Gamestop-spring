@@ -33,18 +33,18 @@ public class GiocoService {
 	}
 	
 	public List<Gioco> orderByPrezzo(){
-		return (List<Gioco>) repo.findByPrezzoOrderByAsc("prezzo");
+		return (List<Gioco>) repo.findByPrezzoOrderByPrezzoAsc("prezzo");
 	}
 	
 	public List<Gioco> orderByNome() {
-		return (List<Gioco>) repo.findByNomeOrderByAsc("nome");
+		return (List<Gioco>) repo.findByTitoloOrderByTitoloAsc("titolo");
 	}
 	
 	public List<Gioco> orderByClassPegi() {
-		return (List<Gioco>) repo.findByClassPegiOrderByAsc("classPegi");
+		return (List<Gioco>) repo.findByClassPegiOrderByClassPegiAsc("classPegi");
 	}
 	
 	public List<Gioco> orderByCategoria() {
-		return (List<Gioco>) repo.findByCategoriaOrderByAsc("categoria");
+		return (List<Gioco>) repo.findByCategoriaOrderByCategoriaAsc("categoria");
 	}
 }
